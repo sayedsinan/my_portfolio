@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'package:my_portfolio/widget/my_button.dart';
 
@@ -9,8 +8,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final sizeof = MediaQuery.of(context).size;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isMobile = screenWidth < 600;
     return Scaffold(
-      backgroundColor: Color(0xFFF1F4FC),
+      backgroundColor: const Color(0xFFF1F4FC),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -20,54 +21,54 @@ class HomePage extends StatelessWidget {
             SizedBox(
               child: Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 244,
                   ),
-                  Icon(Icons.e_mobiledata),
-                  SizedBox(
+                  const Icon(Icons.e_mobiledata),
+                  const SizedBox(
                     width: 40,
                   ),
-                  Text('About'),
-                  SizedBox(
+                  const Text('About'),
+                  const SizedBox(
                     width: 40,
                   ),
-                  Text("Work"),
-                  SizedBox(
+                  const Text("Work"),
+                  const SizedBox(
                     width: 40,
                   ),
-                  Text("NoteBook"),
-                  SizedBox(
+                  const Text("NoteBook"),
+                  const SizedBox(
                     width: 40,
                   ),
-                  Text("Contact"),
-                  SizedBox(
+                  const Text("Contact"),
+                  const SizedBox(
                     width: 40,
                   ),
-                  Text("More"),
+                  const Text("More"),
                   SizedBox(
                     width: sizeof.width * 0.3,
                   ),
-                  Icon(Icons.link_outlined),
-                  SizedBox(
+                  const Icon(Icons.link_outlined),
+                  const SizedBox(
                     width: 24,
                   ),
-                  Icon(Icons.abc),
-                  SizedBox(
+                  const Icon(Icons.abc),
+                  const SizedBox(
                     width: 40,
                   ),
-                  Icon(Icons.abc)
+                  const Icon(Icons.abc)
                 ],
               ),
             ),
             SizedBox(
               height: sizeof.height * 0.2,
             ),
-            Row(
+            const Row(
               children: [
                 SizedBox(
                   width: 244,
                 ),
-                const Text(
+                Text(
                   "I'm Sinan Jifry",
                   style: TextStyle(fontSize: 80),
                 )
@@ -75,12 +76,12 @@ class HomePage extends StatelessWidget {
             ),
             Row(
               children: [
-                SizedBox(width: 244),
-                Text(
+                const SizedBox(width: 244),
+                const Text(
                   'A front-end engineer and UI/UX designer helping startups turn \ntheir visions into a digital reality. I specialize in designing and \nbuilding modern mobile and web-based apps.',
                   style: TextStyle(fontSize: 24),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 45,
                 ),
                 SizedBox(
@@ -98,6 +99,8 @@ class HomePage extends StatelessWidget {
                   width: 244,
                 ),
                 MyButton(
+                  width: 196,
+                  height: 60,
                   name: 'See my resume',
                   elevation: 0,
                 ),
@@ -105,15 +108,17 @@ class HomePage extends StatelessWidget {
                   width: 16,
                 ),
                 MyButton(
+                  width: 196,
+                  height: 60,
                   name: 'Get in touch',
                   elevation: 0,
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 150,
             ),
-            Row(
+            const Row(
               children: [
                 SizedBox(
                   width: 270,
@@ -124,7 +129,7 @@ class HomePage extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
             ),
             ClipRRect(
@@ -138,7 +143,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
             ),
             ClipRRect(
@@ -152,8 +157,8 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 32),
-            Row(
+            const SizedBox(height: 32),
+            const Row(
               children: [
                 SizedBox(
                   width: 270,
@@ -164,7 +169,7 @@ class HomePage extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
             ),
             Row(
@@ -256,10 +261,10 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 114,
             ),
-            Row(
+            const Row(
               children: [
                 SizedBox(
                   width: 244,
@@ -268,11 +273,20 @@ class HomePage extends StatelessWidget {
                   "Let’s work together",
                   style: TextStyle(fontSize: 48),
                 ),
+                SizedBox(
+                  width: 400,
+                ),
+                MyButton(
+                  width: 201,
+                  height: 60,
+                  name: 'Send messeage',
+                  elevation: 0,
+                ),
               ],
             ),
-         Row(
-           children: [
-             const   Row(
+            const Row(
+              children: [
+                Row(
                   children: [
                     SizedBox(
                       width: 244,
@@ -281,11 +295,17 @@ class HomePage extends StatelessWidget {
                       "Want to discuss an opportunity to create something\n great? I’m ready when you are.",
                       style: TextStyle(fontSize: 16),
                     ),
+                    SizedBox(
+                      width: 549,
+                    ),
                   ],
                 ),
-                   MyButton(name: "Send messeage",elevation: 5,)
-           ],
-         )
+              ],
+            ),
+            const SizedBox(
+              height: 114,
+            ),
+            Divider()
           ],
         ),
       ),
