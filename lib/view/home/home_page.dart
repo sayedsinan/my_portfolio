@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var full = LinearGradient(
-      colors: [
+      colors: const [
         Color(0xFFFCEECB),
         Color(0xFFD3DCE8),
         Color(0xFFF7F1F6),

@@ -1,29 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:my_portfolio/controller/services.dart';
 import 'package:my_portfolio/style/colors.dart';
 import 'package:my_portfolio/widget/app_bar.dart';
+import 'package:my_portfolio/widget/my_button.dart';
+import 'package:get/get.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
-
   @override
-  
   Widget build(BuildContext context) {
-   
+    final controller = Get.find<Services>();
+    var full = const LinearGradient(
+      colors:  [
+        Color(0xFFFCEECB),
+        Color(0xFFD3DCE8),
+        Color(0xFFF7F1F6),
+      ],
+    );
+    var less = const LinearGradient(
+      colors: [
+        Color.fromARGB(255, 158, 158, 158),
+        Color(0xFFD3DCE8),
+        Color(0xFFF7F1F6),
+      ],
+    );
     return Scaffold(
       appBar: const MyAppBar(),
       body: Container(
-        decoration:  BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-         
-              Color(0xFFFCEECB),
-              Color(0xFFD3DCE8),
-              Color(0xFFF7F1F6),
-              
-            ],
-          ),
+        decoration: BoxDecoration(
+          gradient: controller.black.value ? full : less,
         ),
         child: SingleChildScrollView(
           child: Row(
@@ -101,7 +106,7 @@ class AboutPage extends StatelessWidget {
                         children: [
                           SizedBox(width: 244),
                           Text(
-                            " With two years of invaluable experience in my role at Harmony\n Technology –– a tech company based here in Rabat, I have honed my\n skills in React.js, Next.js, TailwindCSS, and TypeScript, allowing me to\n craft seamless and interactive user experiences. During my time at\n Harmony Technology, I had the privilege of collaborating on projects\n for esteemed clients such as the Ministry of\n Health, Ministry of Education, and Ministry of Justice. It was an incredibly rewarding\n experience to develop applications that directly impact the lives of\n Moroccan citizens.",
+                            " With two years of invaluable experience in my role at Harmony\n Technology –– a tech company based here in Rabat, I have honed my\n skills in React.js, Next.js, TailwindCSS, and TypeScript, allowing me to\n craft seamless and interactive user experiences. During my time at\n Harmony Technology, I had the privilege of collaborating on projects\n for esteemed clients such as the Ministry of\n Health, Ministry of Education, and Ministry of Justice. \n experience to develop applications that directly impact the lives of\n Moroccan citizens.",
                             style: TextStyle(fontSize: 18),
                           )
                         ],
@@ -137,6 +142,29 @@ class AboutPage extends StatelessWidget {
                   Divider(color: greyColor),
                 ],
               ),
+              const SizedBox(
+                width: 40,
+              ),
+              Column(
+                children: [
+                  const SizedBox(
+                    height: 300,
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      height: 443,
+                      width: 344,
+                      color: Colors.black,
+                      child: Image.asset(''),
+                    ),
+                  ),
+                 const  SizedBox(
+                    height: 100,
+                  ),
+                const   MyButton(name: 'Get in touch', height: 60, width: 201)
+                ],
+              )
             ],
           ),
         ),
