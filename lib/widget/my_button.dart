@@ -8,20 +8,17 @@ final double height;
 final double width;
   @override
   Widget build(BuildContext context) {
-    return Material(
-      elevation: elevation!,
-      child: SizedBox(
-        height:height ,
-        width: width,
-      
-        child: ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-              shape:
-                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(9))),
-          child: Text(
-            name,
-          ),
+    return SizedBox(
+      height:height ,
+      width: width,
+    
+      child: ElevatedButton(
+        onPressed: () {},
+        style: ElevatedButton.styleFrom(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(9))),
+        child: Text(
+          name,
         ),
       ),
     );
