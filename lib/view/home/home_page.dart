@@ -10,14 +10,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var full = LinearGradient(
-      colors: const [
+    var full = const LinearGradient(
+      colors:  [
         Color(0xFFFCEECB),
         Color(0xFFD3DCE8),
         Color(0xFFF7F1F6),
       ],
     );
-    var less = LinearGradient(
+    var less = const LinearGradient(
       colors: [
         Color.fromARGB(255, 158, 158, 158),
         Color(0xFFD3DCE8),
@@ -40,48 +40,7 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: sizeof.height * 0.05,
               ),
-              SizedBox(
-                child: Row(
-                  children: [
-                    const SizedBox(
-                      width: 244,
-                    ),
-                    const Icon(Icons.e_mobiledata),
-                    const SizedBox(
-                      width: 40,
-                    ),
-                    const Text('About'),
-                    const SizedBox(
-                      width: 40,
-                    ),
-                    const Text("Work"),
-                    const SizedBox(
-                      width: 40,
-                    ),
-                    const Text("NoteBook"),
-                    const SizedBox(
-                      width: 40,
-                    ),
-                    const Text("Contact"),
-                    const SizedBox(
-                      width: 40,
-                    ),
-                    const Text("More"),
-                    SizedBox(
-                      width: sizeof.width * 0.3,
-                    ),
-                    const Icon(Icons.link_outlined),
-                    const SizedBox(
-                      width: 24,
-                    ),
-                    const Icon(Icons.abc),
-                    const SizedBox(
-                      width: 40,
-                    ),
-                    const Icon(Icons.abc)
-                  ],
-                ),
-              ),
+            
               SizedBox(
                 height: sizeof.height * 0.2,
               ),
@@ -206,17 +165,65 @@ class HomePage extends StatelessWidget {
                   const SizedBox(
                     width: 243,
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(32),
-                    child: Material(
-                      elevation: 5,
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const AboutPage()));
-                        },
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(32),
+                      child: Material(
+                        elevation: 5,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const AboutPage()));
+                          },
+                          child: Container(
+                            height: 504,
+                            width: 504,
+                            color: Colors.white,
+                            child: Column(
+                              children: [
+                                const SizedBox(
+                                  height: 60,
+                                ),
+                                const Text(
+                                  "About me",
+                                  style: TextStyle(fontSize: 32),
+                                ),
+                                const SizedBox(
+                                  height: 16,
+                                ),
+                                const Text(
+                                  "Who I am and what I do",
+                                  style: TextStyle(fontSize: 16),
+                                ),
+                                const SizedBox(
+                                  height: 68,
+                                ),
+                                SizedBox(
+                                    height: 250,
+                                    width: 200,
+                                    child: Image.asset(
+                                      'assets/Character.png',
+                                      fit: BoxFit.cover,
+                                    ))
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 16,
+                  ),
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(32),
+                      child: Material(
+                        elevation: 5,
                         child: Container(
                           height: 504,
                           width: 504,
@@ -227,71 +234,29 @@ class HomePage extends StatelessWidget {
                                 height: 60,
                               ),
                               const Text(
-                                "About me",
+                                "Tech Stack",
                                 style: TextStyle(fontSize: 32),
                               ),
                               const SizedBox(
                                 height: 16,
                               ),
                               const Text(
-                                "Who I am and what I do",
+                                "The dev tools, apps, devices, and games I use and play.",
                                 style: TextStyle(fontSize: 16),
                               ),
                               const SizedBox(
                                 height: 68,
                               ),
                               SizedBox(
-                                  height: 250,
-                                  width: 200,
-                                  child: Image.asset(
-                                    'assets/Character.png',
-                                    fit: BoxFit.cover,
-                                  ))
+                                height: 290,
+                                width: 400,
+                                child: Image.asset(
+                                  'assets/tech.png',
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
                             ],
                           ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 16,
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(32),
-                    child: Material(
-                      elevation: 5,
-                      child: Container(
-                        height: 504,
-                        width: 504,
-                        color: Colors.white,
-                        child: Column(
-                          children: [
-                            const SizedBox(
-                              height: 60,
-                            ),
-                            const Text(
-                              "Tech Stack",
-                              style: TextStyle(fontSize: 32),
-                            ),
-                            const SizedBox(
-                              height: 16,
-                            ),
-                            const Text(
-                              "The dev tools, apps, devices, and games I use and play.",
-                              style: TextStyle(fontSize: 16),
-                            ),
-                            const SizedBox(
-                              height: 68,
-                            ),
-                            SizedBox(
-                              height: 290,
-                              width: 400,
-                              child: Image.asset(
-                                'assets/tech.png',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ],
                         ),
                       ),
                     ),

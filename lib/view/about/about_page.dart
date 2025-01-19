@@ -36,7 +36,7 @@ class AboutPage extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 278),
+                  const SizedBox(height: 100),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -68,7 +68,7 @@ class AboutPage extends StatelessWidget {
                         color: greyColor,
                       ),
                       const SizedBox(
-                        height: 138,
+                        height: 50,
                       ),
                       const Row(
                         children: [
@@ -148,7 +148,7 @@ class AboutPage extends StatelessWidget {
               Column(
                 children: [
                   const SizedBox(
-                    height: 300,
+                    height: 250,
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
@@ -156,7 +156,7 @@ class AboutPage extends StatelessWidget {
                       height: 443,
                       width: 344,
                       color: Colors.black,
-                      child: Image.asset(''),
+                      child: Image.asset('assets/ghost.png'),
                     ),
                   ),
                  const  SizedBox(
@@ -170,5 +170,5 @@ class AboutPage extends StatelessWidget {
         ),
       ),
     );
-  }
+  } 
 }
